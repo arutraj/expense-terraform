@@ -7,6 +7,7 @@ module "frontend" {
   env           = var.env
   port_no       = var.components["frontend"]["port_no"]
   vault_token   = var.vault_token
+  SSH_PASSWORD  = var.SSH_PASSWORD
 }
 
 module "backend" {
@@ -18,6 +19,7 @@ module "backend" {
   env           = var.env
   port_no       = var.components["backend"]["port_no"]
   vault_token   = var.vault_token
+  SSH_PASSWORD  = var.SSH_PASSWORD
 
 }
 
@@ -29,6 +31,7 @@ module "mysql" {
   env           = var.env
   port_no       = var.components["mysql"]["port_no"]
   vault_token   = var.vault_token
+  SSH_PASSWORD  = var.SSH_PASSWORD
 
 }
 
