@@ -9,6 +9,7 @@ module "frontend" {
   vault_token   = var.vault_token
   SSH_PASSWORD  = var.SSH_PASSWORD
   prometheus_servers = var.prometheus_servers
+  zone_id       = data.aws_route53_zone.main.zone_id
 }
 
 module "backend" {
@@ -22,7 +23,7 @@ module "backend" {
   vault_token   = var.vault_token
   SSH_PASSWORD  = var.SSH_PASSWORD
   prometheus_servers = var.prometheus_servers
-
+  zone_id       = data.aws_route53_zone.main.zone_id
 }
 
 module "mysql" {
@@ -35,6 +36,6 @@ module "mysql" {
   vault_token   = var.vault_token
   SSH_PASSWORD  = var.SSH_PASSWORD
   prometheus_servers = var.prometheus_servers
-
+  zone_id       = data.aws_route53_zone.main.zone_id
 }
 
