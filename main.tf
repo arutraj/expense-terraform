@@ -6,6 +6,7 @@ module "frontend" {
   name               = var.components["frontend"]["name"]
   env                = var.env
   port_no            = var.components["frontend"]["port_no"]
+  disk_size          = var.components["frontend"]["disk_size"]
   vault_token        = var.vault_token
   SSH_PASSWORD       = var.SSH_PASSWORD
   prometheus_servers = var.prometheus_servers
@@ -18,6 +19,7 @@ module "backend" {
 
   instance_type      = var.components["backend"]["instance_type"]
   name               = var.components["backend"]["name"]
+  disk_size          = var.components["backend"]["disk_size"]
   env                = var.env
   port_no            = var.components["backend"]["port_no"]
   vault_token        = var.vault_token
@@ -31,6 +33,7 @@ module "mysql" {
 
   instance_type      = var.components["mysql"]["instance_type"]
   name               = var.components["mysql"]["name"]
+  disk_size          = var.components["mysql"]["disk_size"]
   env                = var.env
   port_no            = var.components["mysql"]["port_no"]
   vault_token        = var.vault_token
