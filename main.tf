@@ -1,5 +1,5 @@
 module "frontend" {
-  #depends_on = [module.backend]
+  depends_on = [module.backend]
   source     = "git::https://github.com/raghudevopsb79/tf-module-app.git"
 
   instance_type      = var.components["frontend"]["instance_type"]
