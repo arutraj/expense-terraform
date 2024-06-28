@@ -48,9 +48,9 @@ module "vpc" {
 
   for_each         = var.vpc
   vpc_cidr_block   = each.value["vpc_cidr_block"]
-  web_subnets_cidr = each.value["web_subnets_cidr"]
-  app_subnets_cidr = each.value["web_subnets_cidr"]
-  db_subnets_cidr  = each.value["web_subnets_cidr"]
+  web_subnet_cidr = each.value["web_subnet_cidr"]
+  app_subnet_cidr = each.value["app_subnet_cidr"]
+  db_subnet_cidr  = each.value["db_subnet_cidr"]
 
   tags = var.tags
   env  = var.env
