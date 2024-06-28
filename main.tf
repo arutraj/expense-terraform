@@ -46,12 +46,15 @@
 module "vpc" {
   source = "git::https://github.com/raghudevopsb79/tf-module-vpc.git"
 
-  for_each        = var.vpc
-  vpc_cidr_block  = each.value["vpc_cidr_block"]
-  web_subnet_cidr = each.value["web_subnet_cidr"]
-  app_subnet_cidr = each.value["app_subnet_cidr"]
-  db_subnet_cidr  = each.value["db_subnet_cidr"]
-  azs             = each.value["azs"]
+  for_each         = var.vpc
+  vpc_cidr_block   = each.value["vpc_cidr_block"]
+  web_subnet_cidr  = each.value["web_subnet_cidr"]
+  app_subnet_cidr  = each.value["app_subnet_cidr"]
+  db_subnet_cidr   = each.value["db_subnet_cidr"]
+  azs              = each.value["azs"]
+  default_vpc_id   = each.value["default_vpc_id"]
+  default_vpc_cidr = each.value["default_vpc_cidr"]
+  default_vpc_rt   = each.value["default_vpc_rt"]
 
   tags = var.tags
   env  = var.env
