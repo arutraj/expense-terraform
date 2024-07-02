@@ -66,7 +66,7 @@ module "eks" {
   for_each    = var.eks
   eks_version = each.value["eks_version"]
 
-  subnet_ids = module.vpc.eks_subnet_ids
+  subnet_ids = module.vpc["main"].eks_subnet_ids
 
   tags = var.tags
   env  = var.env
