@@ -1,11 +1,14 @@
 terraform {
   backend "s3" {}
+  required_providers {
+    kubectl = {
+      source  = "gavinbunney/kubectl"
+      version = "1.11.1"
+    }
+  }
 }
 
 provider "http" {}
 
-provider "kubernetes" {
-  config_path    = "~/.kube/config"
-  config_context = "${var.env}-eks"
-}
+provider "kubectl" {}
 
