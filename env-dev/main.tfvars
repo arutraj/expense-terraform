@@ -47,3 +47,9 @@ tags = {
   env          = "dev"
   created_with = "Terraform"
 }
+
+eks = {
+  main = {
+    eks_version = "1.30"
+  }
+}

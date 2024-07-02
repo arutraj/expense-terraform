@@ -59,3 +59,16 @@ module "vpc" {
   tags = var.tags
   env  = var.env
 }
+
+module "eks" {
+  source = "git::https://github.com/raghudevopsb79/tf-module-eks.git"
+
+  for_each    = var.eks
+  eks_version = each.value["eks_version"]
+
+  subnet_ids = module.vpc.eks_subnet_ids
+
+  tags = var.tags
+  env  = var.env
+}
+
