@@ -4,3 +4,4 @@ variable "env" {}
 variable "vault_token" {}
 variable "tags" {}
 variable "eks" {}
+variable "rds" {}
