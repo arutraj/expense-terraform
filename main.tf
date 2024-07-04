@@ -72,10 +72,3 @@ module "eks" {
   tags = var.tags
   env  = var.env
 }
-
-module "eks-infra-resources" {
-  depends_on    = [module.eks]
-  source        = "./eks-infra-resources"
-  eks_client_id = module.eks["main"].eks_client_id
-  env           = var.env
-}
