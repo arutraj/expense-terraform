@@ -72,3 +72,9 @@ module "eks" {
   tags = var.tags
   env  = var.env
 }
+
+module "rds" {
+  source = "git::https://github.com/raghudevopsb79/tf-module-rds.git"
+
+
+}
